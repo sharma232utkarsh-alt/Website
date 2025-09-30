@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adobe Analytics Demo Site</title>
+</head>
+<body>
+  <h1>Welcome to Adobe Analytics Demo</h1>
+  <p>This is a demo page for testing Adobe Analytics implementation.</p>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="products.html">Products</a> |
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Example button for tracking -->
+  <button id="buyBtn">Buy Now</button>
+
+  <!-- Adobe Launch / Analytics script -->
+  <script src="https://assets.adobedtm.com/LAUNCH-CONTAINER-ID-HERE.js"></script>
+  
+  <script>
+    // Example custom tracking (if you don’t use Launch)
+    document.getElementById("buyBtn").addEventListener("click", function() {
+      if (window.s) {
+        s.tl(true, "o", "Buy Now Button Clicked");
+      }
+    });
+  </script>
+</body>
+</html>
